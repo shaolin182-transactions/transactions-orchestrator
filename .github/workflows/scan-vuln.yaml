@@ -24,7 +24,7 @@ jobs:
           - repo: "transactions-java"
             workflow: "vulnerability-scan.yaml"
 
-    uses: shaolin182/transactions-java/.github/workflows/vulnerability-scan.yaml@36777d80f0b74055becdfdff20f70d7d49abba3c
+    uses: shaolin182-transactions/transactions-java/.github/workflows/vulnerability-scan.yaml@36777d80f0b74055becdfdff20f70d7d49abba3c
 
           
         
