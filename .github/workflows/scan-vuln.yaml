@@ -1,0 +1,32 @@
+name: Security Scan (Trivy)
+
+on:
+    workflow_dispatch:
+      inputs:
+        target_ref:
+          description: "Branch or tag to scan"
+          required: true
+          default: "main"
+          type: string
+
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+jobs:
+  dispatch-and-wait:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - repo: "transactions-java"
+            workflow: "vulnerability-scan.yaml"
+    uses: shaolin182-transactions/transactions-java/.github/workflows/vulnerability-scan.yaml@chore/vulnerabilities
+
+          
+        
+
+
