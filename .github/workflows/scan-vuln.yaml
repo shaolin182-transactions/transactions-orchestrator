@@ -1,13 +1,13 @@
 name: Security Scan (Trivy)
 
 on:
-    workflow_dispatch:
-      inputs:
-        target_ref:
-          description: "Branch or tag to scan"
-          required: true
-          default: "main"
-          type: string
+  workflow_dispatch:
+    inputs:
+      target_ref:
+        description: "Branch or tag to scan"
+        required: true
+        default: "main"
+        type: string
 
 
 permissions:
