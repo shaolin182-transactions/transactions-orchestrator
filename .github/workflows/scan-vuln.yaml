@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   dispatch-and-wait:
-    runs-on: ubuntu-24.04
     strategy:
       matrix:
         include:
