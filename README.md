@@ -1,11 +1,12 @@
 # transactions-orchestrator
 
 Transactions App is composed of multiple microservices, each has its own repository.
-As those repositories are private, we cannot have access to some security features from Github
 
-The purpose of this repo is to centralize information about those microservices : 
-- Versions used by all microservices
-- Security reports
-- SBOM
+The purpose of this repo is to centralize some features that has to be enabled on all repositories: 
+- Dependency management with renovate
 
-A repo for centralizing information about transaction app
+## Dependency Management
+
+### Upgrade dependencies automatically - Renovate
+
+We use the tools Renovate for updating our dependencies automatically
