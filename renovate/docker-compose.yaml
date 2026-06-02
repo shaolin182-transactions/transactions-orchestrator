@@ -1,0 +1,14 @@
+services:
+  renovate:
+    image: renovate/renovate:latest
+    container_name: renovate
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./config.js:/usr/src/app/config.js
+
+    command: ["renovate"]
+
+    restart: unless-stopped
