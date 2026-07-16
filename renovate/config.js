@@ -9,7 +9,7 @@ module.exports = {
     baseBranches: ["fix/repo-renovate"],
 
     // Configuration de base recommandée
-    extends: ["config:recommended"],
+    extends: ["config:best-practices"],
 
     timezone: "Europe/Paris",
 
@@ -57,7 +57,7 @@ module.exports = {
             matchHost: "maven.pkg.github.com",
             hostType: "maven",
             username: process.env.GITHUB_USERNAME,
-            password: process.env.GITHUB_TOKEN
+            password: process.env.GH_TOKEN
         }
     ],
 
