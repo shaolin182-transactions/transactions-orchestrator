@@ -4,7 +4,14 @@ module.exports = {
     // Liste des repos à scanner
     repositories: [
         "shaolin182-transactions/transactions-java",
-        "shaolin182-transactions/transactions-orchestrator"
+        "shaolin182-transactions/transactions-sync-process",
+        "shaolin182-transactions/transactions-fluxcd",
+        "shaolin182-transactions/transactions-helm-chart",
+        "shaolin182-transactions/transactions-ihm-angular",
+        "shaolin182-transactions/transactions-orchestrator",
+        "shaolin182-transactions/transactions-deployment",
+        "shaolin182-transactions/transactions-inventory",
+        "shaolin182-transactions/transactions-infra",
     ],
 
     baseBranchPatterns: ["main"],
