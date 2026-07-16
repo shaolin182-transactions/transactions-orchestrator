@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Renovate
-        run: |
-          docker run --rm \
-            -e RENOVATE_TOKEN=${{ secrets.RENOVATE_TOKEN }} \
-            -e RENOVATE_CONFIG_FILE=config.js \
-            -e LOG_LEVEL=info \
-            -v ${{ github.workspace }}:/usr/src/app \
-            renovate/renovate
+        uses: renovatebot/github-action@v43.0.12
+        with:
+          configurationFile: renovate/config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          GITHUB_USERNAME: ${{ env.GITHUB_ACTOR }}
