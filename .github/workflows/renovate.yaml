@@ -18,6 +18,8 @@ jobs:
         with:
           configurationFile: renovate/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
+          env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL|GITHUB_COM_TOKEN|NODE_OPTIONS|NO_COLOR|(?:HTTPS?|NO)_PROXY|(?:https?|no)_proxy|TR_TOKEN|TR_USERNAME)$"
         env:
-          GH_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-          GITHUB_USERNAME: ${{ env.GITHUB_ACTOR }}
+          # Token for accessing maven packages
+          TR_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          TR_USERNAME: ${{ env.GITHUB_ACTOR }}

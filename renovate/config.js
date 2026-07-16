@@ -3,10 +3,11 @@ module.exports = {
 
     // Liste des repos à scanner
     repositories: [
-        "shaolin182-transactions/transactions-java"
+        "shaolin182-transactions/transactions-java",
+        "shaolin182-transactions/transactions-orchestrator"
     ],
 
-    baseBranches: ["fix/repo-renovate"],
+    baseBranches: ["main"],
 
     // Configuration de base recommandée
     extends: ["config:best-practices"],
