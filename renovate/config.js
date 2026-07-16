@@ -7,7 +7,7 @@ module.exports = {
         "shaolin182-transactions/transactions-orchestrator"
     ],
 
-    baseBranches: ["main"],
+    baseBranchPatterns: ["main"],
 
     // Configuration de base recommandée
     extends: ["config:best-practices"],
@@ -17,6 +17,7 @@ module.exports = {
     // Désactive l'onboarding PR si tu veux aller direct en prod
     onboarding: false,
 
+    // Ne rend pas obligatoire la conf Renovate par repo
     requireConfig: "optional",
 
     labels: ["dependencies", "maven"],
@@ -34,22 +35,20 @@ module.exports = {
         {
             matchManagers: ["maven"],
 
-            // Regroupe toutes les deps Maven dans une PR
-            groupName: "maven dependencies",
-
             // Automerge uniquement les patch (safe)
             matchUpdateTypes: ["patch"],
-            automerge: true
+            labels: ["dependencies", "patch"]
         },
         {
             matchManagers: ["maven"],
             matchUpdateTypes: ["minor"],
-            groupName: "maven minor updates"
+            labels: ["dependencies", "minor"]
         },
         {
             matchManagers: ["maven"],
             matchUpdateTypes: ["major"],
-            groupName: "maven major updates"
+            labels: ["dependencies", "major"],
+            dependencyDashboardApproval: true
         }
     ],
 
@@ -64,7 +63,9 @@ module.exports = {
 
 
     // Limite le bruit
+    // Pas plus de 5 PRs pour le même repo
     prConcurrentLimit: 5,
+    // Pas plus de PR créées par heure
     prHourlyLimit: 2,
 
     // Ignore certains artefacts si besoin
