@@ -79,4 +79,8 @@ module.exports = {
     ignoreDeps: [
         // "org.slf4j:slf4j-api"
     ]
+
+    "flux": {
+        "managerFilePatterns": ["/\\.yaml$/"]
+    }
 };
