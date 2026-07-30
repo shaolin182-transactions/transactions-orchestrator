@@ -78,7 +78,7 @@ module.exports = {
     // Ignore certains artefacts si besoin
     ignoreDeps: [
         // "org.slf4j:slf4j-api"
-    ]
+    ],
 
     "flux": {
         "managerFilePatterns": ["/\\.yaml$/"]
