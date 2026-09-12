@@ -1,6 +1,6 @@
 services:
   renovate:
-    image: renovate/renovate:latest
+    image: renovate/renovate:latest@sha256:cab0e54171a57b0e4720b4376cc0f3aa0a09e717467c42f8d1135f7bf5c344f4
     container_name: renovate
 
     env_file:
